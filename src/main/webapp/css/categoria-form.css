@@ -1,0 +1,123 @@
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --color-verde-final: #4d9a4d;
+    --color-verde-degradado-inicio: #7fc17f;
+}
+
+body {
+    background-color: #f5e1b8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.logo-imagen {
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.titulo-gestion {
+    font-size: 1.5em;
+    color: white;
+    font-weight: 700;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 12px;
+    background: linear-gradient(to right, var(--color-verde-degradado-inicio), var(--color-verde-final));
+}
+
+
+.edit-section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-container label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.image-container {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-save {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #7fc17f, #4d9a4d);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-cancel {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #d9534f, #b52b27);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1em;
+}

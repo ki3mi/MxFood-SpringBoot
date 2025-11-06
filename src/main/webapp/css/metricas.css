@@ -1,0 +1,324 @@
+:root {
+    --color-fondo-body: #e9e4c1;
+    --color-principal-claro: #7fc17f;
+    --color-principal: #4d9a4d;
+    --color-principal-oscuro: #2a613d;
+    --color-formula: #ff4985;
+    --color-formula-bg: #ffe0eb;
+    --color-tendencia-up: #4d9a4d;
+
+    --color-tendencia-down: #e63946;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Contenedor */
+body {
+    background-color: var(--color-fondo-body);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+header {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-header {
+    height: 10rem;
+    width: auto;
+}
+
+.subtitle-container {
+    background: linear-gradient(90deg, var(--color-principal-claro), var(--color-principal));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle-container .subtitle {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Métricas Tarjeta*/
+.card-metrica {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.card-metrica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.icono-metrica img {
+    height: 4rem;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.card-metrica h3 {
+    font-size: 1.2rem;
+    color: var(--color-principal-oscuro);
+    margin-bottom: 10px;
+}
+
+.valor-metrica {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-principal);
+    margin-bottom: 15px;
+}
+
+.key-insight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #f7fff7;
+    border: 1px solid #d4edda;
+}
+
+.insight-label {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #333;
+}
+
+.insight-value {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.trend-up {
+    color: var(--color-tendencia-up);
+}
+
+.trend-down {
+    color: var(--color-tendencia-down);
+}
+
+/* Cajita de Formulas */
+.formula-bloque-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.formula-bloque {
+    padding: 8px 12px;
+    border: 2px solid var(--color-formula);
+    border-radius: 6px;
+    color: var(--color-formula);
+    background-color: var(--color-formula-bg);
+    text-align: center;
+}
+
+.formula-bloque.lado-derecho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    border: 2px solid var(--color-formula);
+}
+
+.formula-bloque.lado-izquierdo {
+    background-color: var(--color-formula-bg);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.formula-igual {
+    font-size: 1.8em;
+    color: var(--color-formula);
+    font-weight: 900;
+}
+
+.formula-bloque .numerador,
+.formula-bloque .denominador {
+    margin: 0;
+    padding: 6px 10px;
+    width: 100%;
+    text-align: center;
+    color: var(--color-formula);
+    font-size: 0.9em;
+}
+
+.formula-bloque .linea-division {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-formula);
+    border: none;
+}
+
+.formula-description {
+    text-align: center;
+    font-size: 0.9em;
+    margin: 5px 0 15px 0;
+}
+
+/* Gráfico de tarta*/
+.grafico-circular-unico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.grafico-circular-unico .pie {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: conic-gradient(var(--color-principal-claro) 0% calc(var(--a) * 1%),
+            var(--color-principal) calc(var(--a) * 1%) calc((var(--a) + var(--b)) * 1%),
+            #a0d18c calc((var(--a) + var(--b)) * 1%) calc((var(--a) + var(--b) + var(--c)) * 1%),
+            #60b84f calc((var(--a) + var(--b) + var(--c)) * 1%) 100%);
+}
+
+.grafico-circular-unico .leyenda {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 6px;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.grafico-circular-unico .leyenda span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+/* Barras verticales*/
+.mini-grafico-vertical {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 150px;
+    margin-top: 15px;
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 25px;
+}
+
+.mini-grafico-vertical .barra-v {
+    width: 10%;
+    background: linear-gradient(to bottom, #a7fa70, #1a8d10);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: height 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+}
+
+.mini-grafico-vertical .barra-v:hover {
+    transform: scale(1.05);
+}
+
+.mini-grafico-vertical .valor-barra {
+    position: absolute;
+    top: -20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-principal-oscuro);
+    white-space: nowrap;
+}
+
+.etiqueta-barra {
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.75rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Barras Horizontales */
+.mini-grafico-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.mini-grafico-horizontal .barra-h {
+    height: 25px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+    color: #1b3a2e;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mini-grafico-horizontal .barra-h:hover {
+    transform: scaleX(1.03);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}

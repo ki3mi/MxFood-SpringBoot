@@ -1,0 +1,155 @@
+* {
+    font-family: 'Outfit';
+}
+
+:root {
+    --card: #ffffff;
+    --radius: 14px;
+    --shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+    --gap: 20px;
+}
+
+body {
+    background: #EADCBB;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08)
+}
+
+thead {
+    background: linear-gradient(to bottom, #7fc17f, #195D0F);
+    color: #fff
+}
+
+th,
+td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6
+}
+
+th {
+    font-weight: 600;
+    font-size: .95rem
+}
+
+tbody tr:hover {
+    background: #f1f5f9
+}
+
+.actions {
+    display: flex;
+    gap: 8px
+}
+
+button {
+    border: 0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .9rem
+}
+
+.btn-edit {
+    background: linear-gradient(to right, #7fc17f, #195D0F);
+    color: #fff
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: #fff
+}
+
+.small-muted {
+    font-size: .9rem;
+    color: #6b7280
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #7fc17f, #195D0F);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+input[type="text"],
+textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db
+}
+
+@media (max-width:720px) {
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none
+    }
+}
+
+/* Esrtilos generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 500px;
+    height: 200px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.main-title {
+    padding: 5px 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #7fc17f, #1f7512);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: auto;
+}
+
+
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+}

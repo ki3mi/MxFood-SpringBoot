@@ -1,0 +1,207 @@
+:root {
+    --color-fondo-principal: #f5e1b8;
+    --color-texto-oscuro: #333;
+    --color-verde-principal: #407244;
+    --color-verde-claro: #82D272;
+    --color-caja-fondo: #0b5f1b;
+    --color-caja-texto-claro: #D1FAD4;
+    --color-btn-reporte-inicio: #B33541;
+    --color-btn-reporte-medio: #871334;
+    --color-btn-reporte-fin: #2F1C22;
+    --color-guia-fondo-item: #D9D9D9;
+    --color-guia-borde: #1C1771;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--color-fondo-principal);
+    margin: 0;
+    padding: 0;
+    color: var(--color-texto-oscuro);
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 10rem;
+}
+
+.btn-contacto {
+    background: linear-gradient(to top, var(--color-verde-claro), var(--color-verde-principal));
+    color: white;
+    font-size: 2rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.titulo {
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+
+.titulo h2 {
+    font-size: 26px;
+    color: #444;
+    font-weight: 700;
+}
+
+/* ===================================
+    CONTENEDOR PRINCIPAL: ALINEACIÓN COMPACTA Y ESPACIO
+====================================== */
+.contenedor {
+    display: flex;
+    /* Aumento del ancho máximo para dar más aire a los contenedores */
+    max-width: 1350px;
+    margin: 0 auto;
+    /* Reducimos el padding horizontal a 0, y mantenemos el vertical */
+    padding: 20px 0;
+
+    /* Usamos 'space-around' para dar espacio a los lados, o 'center' si no hay suficiente espacio */
+    justify-content: center;
+    /* Reducimos el gap entre elementos a 15px */
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+/* Cajas Reporte, Guía y Contacto */
+.reporte, .guia, .contacto {
+    /* Nueva fórmula: Damos 33% del ancho, y reducimos el gap */
+    flex-basis: 100%;
+    max-width: 440px;
+
+    /* Agregamos padding horizontal de 20px A CADA ELEMENTO para manejar la separación de los bordes del monitor */
+    padding: 25px 20px;
+
+    /* Estilos generales */
+    height: auto;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos Específicos */
+.reporte, .guia {
+    background-color: var(--color-caja-fondo);
+    color: white;
+    border-radius: 10px;
+}
+
+.contacto {
+    background-color: transparent;
+    box-shadow: none; /* Quitamos la sombra de la caja de contacto, ya que no tiene fondo */
+}
+
+/* Contenido de Reporte y Guía */
+.reporte h3, .guia h3 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Alfa Slab One', serif;
+    font-weight: normal;
+}
+
+.reporte label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--color-caja-texto-claro);
+}
+
+.reporte select,
+.reporte textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 10px;
+}
+.reporte textarea{
+    height: 250px;
+    resize: none;
+}
+
+.btn-reporte {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(to top, var(--color-btn-reporte-fin), var(--color-btn-reporte-medio), var(--color-btn-reporte-inicio));
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1.3rem;
+    padding: 18px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.guia p{
+    color: var(--color-caja-texto-claro);
+}
+
+.guia ul {
+    margin-top: 8px;
+    background-color: var(--color-guia-fondo-item);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    list-style-type: none;
+    list-style-position: inside;
+    border: 1.5px solid var(--color-guia-borde);
+    width: 100%;
+    max-width: 100%;
+}
+
+.guia ul li {
+    margin-bottom: 5px;
+    color: black;
+}
+
+/* Contenido de Contacto */
+.contacto img{
+    height: 80px;
+}
+.contacto h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    font-size: 25px;
+    margin: 8px 0;
+}
+
+.telefono,
+.gmail,
+.horario{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #524E69;
+    justify-content: flex-start;
+}
