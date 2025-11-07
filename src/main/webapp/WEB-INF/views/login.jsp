@@ -16,24 +16,24 @@
 
             <h2 class="subtitulo">Ingresa tus datos</h2>
 
-            <form class="formulario-login">
+            <form class="formulario-login" action="${pageContext.request.contextPath}/login" method="post">
                 <div class="campo-entrada">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" placeholder="Nombre de Usuario o ID">
+                    <label for="usuario">Email</label>
+                    <input type="text" id="usuario" name="username" placeholder="Email">
                 </div>
 
                 <div class="campo-entrada">
                     <label for="contrasena">Contraseña</label>
                     <div class="contenedor-contrasena">
-                        <input type="password" id="contrasena" placeholder="Contraseña">
+                        <input type="password" id="contrasena" name="password" placeholder="Contraseña">
                         <span class="icono-ojo">&#128065;</span>
                     </div>
                 </div>
-
+                <input type="submit" value="Ingresar" class="boton-inicio-sesion"/>
             </form>
-            <a href="/menu"><button type="submit" class="boton-inicio-sesion">Iniciar Sesión</button></a>
-
-            <a href="#" class="enlace-olvidaste">Olvidaste tu contraseña?</a>
+            <c:if test="${not empty error}">
+                <p style="color:red">${error}</p>
+            </c:if>
         </div>
     </div>
 </body>

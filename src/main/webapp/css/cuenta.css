@@ -111,3 +111,21 @@ body {
 .btn-volver:hover {
     opacity: 0.9;
 }
+
+.btn-close {
+    display: inline-block;
+    background: linear-gradient(to right, red, rgb(238, 112, 112));
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    transition: opacity 0.2s;
+}
+
+.btn-close:hover {
+    opacity: 0.9;
+}

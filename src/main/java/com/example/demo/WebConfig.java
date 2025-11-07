@@ -13,6 +13,12 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
+    private final SessionInterceptor sessionInterceptor;
+
+    public WebConfig(SessionInterceptor sessionInterceptor){
+        this.sessionInterceptor = sessionInterceptor;
+    }
+
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();
@@ -30,6 +36,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor());
+        registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");
     }
     
 }

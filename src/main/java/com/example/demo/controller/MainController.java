@@ -10,10 +10,10 @@ public class MainController {
     public String home(){
         return "redirect:/login";
     }
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
+    // @GetMapping("/login")
+    // public String login(){
+    //     return "login";
+    // }
     @GetMapping("/menu")
     public String menu(){
         return "menu";
