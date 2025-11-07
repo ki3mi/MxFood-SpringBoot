@@ -1,86 +1,63 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MiControlador {
 
-    @GetMapping("/")
-    public String index(){
-        return "test";
-    }
-
-    @GetMapping("/hola")
-    public String holaMundo(Model model) {
-        System.out.println("test");
-        model.addAttribute("mensaje", "¡Hola desde Spring Boot!");
-        return "vista";
-    }
-
-    @GetMapping("/login")
-    public String login(){
-        return "mxfood/login";
-    }
-
-    @GetMapping("/menu")
-    public String menu(){
-        return "mxfood/menu";
-    }
-
     @GetMapping("/venta")
     public String venta(){
-        return "mxfood/venta";
+        return "venta/venta";
     }
 
     @GetMapping("/catalogo")
     public String catalogo(){
-        return "mxfood/catalogo";
+        return "producto/catalogo";
     }
 
     @GetMapping("/publicidad")
     public String publicidad(){
-        return "mxfood/publicidad";
+        return "publicidad/publicidad";
     }
 
     @GetMapping("/metricas")
     public String metricas(){
-        return "mxfood/metricas";
+        return "metricas/metricas";
     }
 
     @GetMapping("/productos")
     public String productos(){
-        return "mxfood/productos";
+        return "producto/productos";
     }
 
     @GetMapping("/contacto")
     public String contacto(){
-        return "mxfood/contacto";
+        return "contacto/contacto";
     }
 
     @GetMapping("/gestion-ventas")
     public String gestionVentas(){
-        return "mxfood/gestion-ventas";
+        return "venta/gestion-ventas";
     }
 
     @GetMapping("/cuenta")
     public String cuenta(){
-        return "mxfood/cuenta";
+        return "cuenta/cuenta";
     }
 
     @GetMapping("/categorias")
     public String categorias(){
-        return "mxfood/categorias";
+        return "tipoproducto/categorias";
     }
 
     @GetMapping("/categorias/crear")
     public String categoriaCrear(){
-        return "mxfood/categorias/formulario";
+        return "tipoproducto/formulario";
     }
 
     @GetMapping("/categorias/editar")
     public String categoriaeditar(){
-        return "mxfood/categorias/formulario";
+        return "tipoproducto/formulario";
     }
 }

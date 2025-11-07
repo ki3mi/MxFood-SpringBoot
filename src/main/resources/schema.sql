@@ -20,5 +20,3 @@ CREATE TABLE IF NOT EXISTS producto (
     CONSTRAINT fk_tipo_producto FOREIGN KEY (id_tipo_producto) 
     REFERENCES tipo_producto(id) ON DELETE SET NULL
 );
-
-
