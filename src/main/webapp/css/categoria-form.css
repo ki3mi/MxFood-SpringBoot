@@ -1,13 +1,5 @@
-* {
+body{
     font-family: 'Outfit', sans-serif;
-}
-
-:root {
-    --color-verde-final: #4d9a4d;
-    --color-verde-degradado-inicio: #7fc17f;
-}
-
-body {
     background-color: #f5e1b8;
     margin: 0;
     padding: 0;
@@ -19,15 +11,15 @@ body {
     background: #ffffff;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
+/* HEADER */
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-bottom: 2rem;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .logo-imagen {
@@ -37,16 +29,12 @@ body {
 }
 
 .titulo-gestion {
-    font-size: 1.5em;
-    color: white;
+    font-size: 2.2em;
+    color: #2a613d;
     font-weight: 700;
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 12px;
-    background: linear-gradient(to right, var(--color-verde-degradado-inicio), var(--color-verde-final));
 }
 
-
+/* CONTENEDOR FORMULARIO + IMAGEN */
 .edit-section {
     display: flex;
     gap: 40px;
@@ -90,7 +78,7 @@ body {
     width: 100%;
     max-width: 400px;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .buttons-container {
@@ -120,4 +108,14 @@ body {
     font-weight: 600;
     cursor: pointer;
     font-size: 1em;
+}
+
+@media (max-width: 900px) {
+    .edit-section {
+    flex-direction: column;
+    align-items: center;
+    }
+    .image-container img {
+    max-width: 90%;
+    }
 }

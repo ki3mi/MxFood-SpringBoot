@@ -20,7 +20,7 @@
         <hr>
         <div class='_1'>THE PAGE</div>
         <div class='_2'>WAS NOT FOUND</div>
-        <a class='btn' href='/'>VOLVER</a>
+        <a class='btn' href='/menu'>VOLVER</a>
     </div>
 </body>
 

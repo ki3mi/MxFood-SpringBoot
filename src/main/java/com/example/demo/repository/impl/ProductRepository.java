@@ -28,6 +28,7 @@ public class ProductRepository implements ProductDAO{
     };
 
     
+
     public List<Product> listProducts(){
         String query = "SELECT id, nombre, fecha_creacion, id_tipo_producto FROM producto";
         return jdbcTemplate.query(query, productRowMapper);

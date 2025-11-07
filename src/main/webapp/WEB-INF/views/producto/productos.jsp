@@ -8,7 +8,7 @@
       <div class="brand">
         <div class="logo">
           <a href="/menu">
-            <img src="imag/logo.png" alt="img" class="img">
+            <img src="../imag/logo.png" alt="img" class="img">
           </a>
         </div>
         <div>
@@ -20,80 +20,51 @@
 
       <div class="header-actions">
         <a href="/categorias" class="btn-categorias">
-          Gestionar Categorías
+          Gestionar Categorias
+        </a>
+        <a href="/productos/create" class="btn-categorias">
+          Crear Producto
         </a>
       </div>
 
     </header>
     <main class="main">
 
-      <section class="form-section">
-        <form class="card form">
-          <label>
-            Nombre del Platillo
-            <input type="text" placeholder="Ej. Tacos al Pastor">
-          </label>
-
-          <label>
-            Precio
-            <input type="number" placeholder="S/. 0.00">
-          </label>
-
-          <label>
-            Descripción
-            <textarea placeholder="Describe el platillo..." rows="4"></textarea>
-          </label>
-
-          <label>
-            Categoría
-            <select>
-              <option>Entradas</option>
-              <option>Principales</option>
-              <option>Postres</option>
-              <option>Vegano</option>
-              <option>Sin gluten</option>
-            </select>
-          </label>
-
-          <label>
-            Imagen
-            <input type="file" accept="image/*">
-          </label>
-
-          <div class="card-footer">
-            <button type="reset" class="ghost">Cancelar</button>
-            <button type="submit" class="btn">Guardar</button>
-          </div>
-        </form>
-      </section>
-
       <section class="list-section">
         <h2>Listado de Platillos</h2>
         <section class="grid" aria-label="Catálogo de platos">
+
           <!-- Card 1 -->
-          <article class="card">
-            <div class="media" style="background:linear-gradient(135deg,#fff2eb,#ffe7d8);">
-              <img src="imag/taco-pastor.jpg" alt="img" class="img">
-            </div>
-            <div class="content">
-              <div class="title">
-                <h3>Tacos al Pastor</h3>
-                <div class="price">S/. 45</div>
-              </div>
-              <p class="desc">Clásicos tacos mexicanos de cerdo marinado con achiote y piña, servidos en tortillas de
-                maíz.</p>
-              <div class="tags"><span class="tag">Tradicional</span><span class="tag">Cerdo</span></div>
-              <div class="card-footer">
-                <a href="editarPlatillo.html"><button class="ghost">Editar</button></a>
-                <a href=""><button class="btn">Eliminar</button></a>
-              </div>
-            </div>
-          </article>
+          <c:forEach items="${pablo}" var="product">
+
+            <form action="">
+              <article class="card">
+                <div class="media" style="background:linear-gradient(135deg,#fff2eb,#ffe7d8);">
+                  <img src="../imag/taco-pastor.jpg" alt="img" class="img">
+                </div>
+                <div class="content">
+                  <h3>ID: ${product.id}</h3>
+                  <div class="title">
+                    <h3>${product.nombre}</h3>
+                    <div class="price">S/. 45</div>
+                  </div>
+                  <p class="desc">Clásicos tacos mexicanos de cerdo marinado con achiote y piña, servidos en tortillas de
+                    maíz.</p>
+                  <div class="tags"><span class="tag">Tradicional</span><span class="tag">Cerdo</span></div>
+                  <div class="card-footer">
+                    <a href="editarPlatillo.html"><button class="ghost">Editar</button></a>
+                    <a href=""><button class="btn">Eliminar</button></a>
+                  </div>
+                </div>
+              </article>
+            </form>
+
+          </c:forEach>
 
           <!-- Card 2 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#ebfff7,#dffbf0);">
-              <img src="imag/guacamole-totopo.jpg" alt="img" class="img">
+              <img src="../imag/guacamole-totopo.jpg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">
@@ -113,7 +84,7 @@
           <!-- Card 3 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#fff7eb,#fff1d9);">
-              <img src="imag/enchilada-rojo.jpeg" alt="img" class="img">
+              <img src="../imag/enchilada-rojo.jpeg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">
@@ -133,7 +104,7 @@
           <!-- Card 4 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#fff0ff,#ffe9fb);">
-              <img src="imag/churros.jpeg" alt="img" class="img">
+              <img src="../imag/churros.jpeg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">
@@ -153,7 +124,7 @@
           <!-- Card 5 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#f0fff9,#e7fff6);">
-              <img src="imag/ensalada-nopal.jpg" alt="img" class="img">
+              <img src="../imag/ensalada-nopal.jpg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">
@@ -172,7 +143,7 @@
           <!-- Card 6 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#fff8f0,#fff3e6);">
-              <img src="imag/quesadillas-queso.jpg" alt="img" class="img">
+              <img src="../imag/quesadillas-queso.jpg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">
@@ -191,7 +162,7 @@
           <!-- Card 7 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#eef6ff,#e8f1ff);">
-              <img src="imag/pozole.jpg" alt="img" class="img">
+              <img src="../imag/pozole.jpg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">
@@ -211,7 +182,7 @@
           <!-- Card 8 -->
           <article class="card">
             <div class="media" style="background:linear-gradient(135deg,#fff6f0,#fff0e6);">
-              <img src="imag/tamal.jpg" alt="img" class="img">
+              <img src="../imag/tamal.jpg" alt="img" class="img">
             </div>
             <div class="content">
               <div class="title">

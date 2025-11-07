@@ -1,0 +1,23 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Product;
+import com.example.demo.service.ProductService;
+
+@RestController
+public class TestController {
+    private final ProductService productService;
+
+    public TestController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @GetMapping("/test")
+    public List<Product> test(){
+        return productService.listProducts();
+    }
+}
