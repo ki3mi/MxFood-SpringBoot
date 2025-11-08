@@ -11,38 +11,37 @@
                         </a>
                         <a href="/productos"><button type="reset" class="ghost">Volver</button></a>
                     </div>
-                    <form class="card form" action="">
+                    <form class="card form" action="${pageContext.request.contextPath}/productos/crear" method="post">
+                        <h2>Crear Producto</h2>
                         <label>
                             Nombre del Platillo
-                            <input type="text" placeholder="Ej. Tacos al Pastor">
                         </label>
-
-                        <label>
-                            Precio
-                            <input type="number" placeholder="S/. 0.00">
-                        </label>
+                        <input type="text" name="nombre" placeholder="Ej. Tacos al Pastor" required>
 
                         <label>
                             Descripción
-                            <textarea placeholder="Describe el platillo..." rows="4"></textarea>
                         </label>
+                        <textarea placeholder="Describe el platillo..." rows="4" name="descripcion"></textarea>
+
+                        <label>
+                            Precio
+                        </label>
+                        <input type="number" step="0.01" name="precio" placeholder="S/. 0.00">
+
+                        <select name="estado">
+                            <option value="Disponible">Disponible</option>
+                            <option value="Agotado">Agotado</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
 
                         <label>
                             Categoría
-                            <select>
-                                <option>Entradas</option>
-                                <option>Principales</option>
-                                <option>Postres</option>
-                                <option>Vegano</option>
-                                <option>Sin gluten</option>
-                            </select>
                         </label>
-
-                        <label>
-                            Imagen
-                            <input type="file" accept="image/*">
-                        </label>
-
+                        <select name="categoryId">
+                            <c:forEach items="${categories}" var="category">
+                                <option value="${category.id}">${category.nombre}</option>
+                            </c:forEach>
+                        </select>
                         <div class="card-footer">
                             <button type="submit" class="btn">Guardar</button>
                         </div>

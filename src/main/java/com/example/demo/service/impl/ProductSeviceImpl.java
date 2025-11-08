@@ -17,4 +17,6 @@ public class ProductSeviceImpl implements ProductService{
     }
 
     public List<Product> listProducts(){return productDAO.listProducts();};
+    public List<Product> listProductsCat(){return productDAO.listProductsCat();};
+    public void createProduct(Product product){productDAO.createProduct(product);}
 }

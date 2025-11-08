@@ -69,11 +69,12 @@ CREATE TABLE venta (
 -- TABLA: detalle_venta
 -- ===========================
 CREATE TABLE detalle_venta (
+  Id INT NOT NULL,
   Venta_Id INT NOT NULL,
   Producto_Id INT NOT NULL,
   Cantidad INT NOT NULL,
   Subtotal DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (Venta_Id, Producto_Id),
+  PRIMARY KEY (Id),
   CONSTRAINT fk_detalle_venta FOREIGN KEY (Venta_Id) 
     REFERENCES venta(Id)
     ON DELETE CASCADE
@@ -81,8 +82,7 @@ CREATE TABLE detalle_venta (
   CONSTRAINT fk_detalle_producto FOREIGN KEY (Producto_Id) 
     REFERENCES producto(Id)
     ON DELETE RESTRICT
-    ON UPDATE CASCADE,
-  INDEX (Producto_Id)
+    ON UPDATE CASCADE
 ) ENGINE=InnoDB 
   DEFAULT CHARSET=utf8mb4 
   COLLATE=utf8mb4_general_ci;

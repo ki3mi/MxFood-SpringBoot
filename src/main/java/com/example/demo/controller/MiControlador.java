@@ -40,19 +40,4 @@ public class MiControlador {
     public String cuenta(){
         return "cuenta/cuenta";
     }
-
-    @GetMapping("/categorias")
-    public String categorias(){
-        return "tipoproducto/categorias";
-    }
-
-    @GetMapping("/categorias/crear")
-    public String categoriaCrear(){
-        return "tipoproducto/formulario";
-    }
-
-    @GetMapping("/categorias/editar")
-    public String categoriaeditar(){
-        return "tipoproducto/formulario";
-    }
 }

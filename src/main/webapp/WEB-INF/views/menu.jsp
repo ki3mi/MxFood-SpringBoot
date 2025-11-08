@@ -22,7 +22,7 @@
             <!-- CRUD Catálogo de Productos -->
             <a href="/productos" class="card">
                 <img src="imag/CrudCatalogo.png" alt="CRUD Catálogo de Productos">
-                <p>CRUD Catálogo de Productos</p>
+                <p>Productos</p>
             </a>
 
             <!-- Publicidad -->
