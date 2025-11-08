@@ -7,4 +7,7 @@ public interface ProductService {
     public List<Product> listProducts();
     public List<Product> listProductsCat();
     void createProduct(Product product);
+    public Product getProductById(int id);
+    void updateProduct(Product product);
+    void deactivateProduct(int id);
 }

@@ -15,8 +15,14 @@ public class CategoryServiceImpl implements CategoryService{
     public CategoryServiceImpl(CategoryDAO categoryDAO){
         this.categoryDAO = categoryDAO;
     }
-
-    public List<Category> list(){
-        return categoryDAO.list();
-    }
+    // Listar Categorias
+    public List<Category> list(){return categoryDAO.list();}
+    // Crear Categoria
+    public void createCategory(Category category){categoryDAO.createCategory(category);}
+    // Obtener Categoria por Id
+    public Category getCategoryById(int id){return categoryDAO.getCategoryById(id);}
+    // Actualizar Categoria
+    public void updateCategory(Category category){categoryDAO.updateCategory(category);}
+    // Desactivar Categoria
+    public void deactivateCategory(int id){categoryDAO.deactivateCategory(id);}
 }

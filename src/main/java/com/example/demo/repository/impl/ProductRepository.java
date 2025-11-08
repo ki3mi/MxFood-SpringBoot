@@ -76,4 +76,35 @@ public class ProductRepository implements ProductDAO{
                 product.getEstado(), 
                 product.getCategoryId());
     }
+
+    // Obtener producto por ID
+    public Product getProductById(int id){
+        String query = """
+                SELECT
+                    p.Id, p.Nombre, p.Descripcion, p.Precio, p.Estado, p.Estado, p.Categoria_Id,
+                    c.Id AS c_Id, c.Nombre AS c_Nombre, c.Descripcion AS c_Descripcion, c.Estado AS c_Estado
+                FROM producto p
+                INNER JOIN categoria c ON p.Categoria_Id = c.Id
+                WHERE p.Id = ?
+                """;
+        return jdbcTemplate.queryForObject(query, productCatRowMapper, id);
+    }
+
+    // Actualizar Producto
+    public int updateProduct(Product product){
+        String query = "UPDATE producto SET Nombre = ?, Descripcion = ?, Precio = ?, Estado = ?, Categoria_Id = ? WHERE Id = ?";
+        return jdbcTemplate.update(query, 
+                product.getNombre(),
+                product.getDescripcion(),
+                product.getPrecio(),
+                product.getEstado(),
+                product.getCategoryId(),
+                product.getId());
+    }
+
+    // Desactivar producto
+    public int deactivateProduct(int id){
+        String query = "UPDATE producto SET Estado = 'Inactivo' WHERE Id = ?";
+        return jdbcTemplate.update(query, id);
+    }
 }

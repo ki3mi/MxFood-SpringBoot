@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" href="../css/categorias.css">
+<link rel="stylesheet" href="/css/categorias.css">
 
 <body>
 
@@ -21,7 +21,7 @@
     </header>
     <main class="main">
       <div class="toolbar">
-        <a href="/categorias/crear" class="btn-primary">+ Nueva categoría</a>
+        <a href="/categorias/create" class="btn-primary">+ Nueva categoría</a>
       </div>
 
 
@@ -37,8 +37,7 @@
         </thead>
         <tbody>
           <!-- Filas de ejemplo -->
-          <c:forEach items="${categories}" var="category">
-            <form action="">
+          <c:forEach items="${categories}" var="category">            
               <tr>
                 <td>${category.id}</td>
                 <td>${category.nombre}</td>
@@ -46,12 +45,16 @@
                 <td>${category.descripcion}</td>
                 <td>
                   <div class="actions">
-                    <a href="/categorias/editar"><button class="btn-edit">Editar</button></a>
-                    <a href=""><button class="btn-delete">Desactivar</button></a>
+                    <!-- Boton de eliminar -->
+                    <form action="${pageContext.request.contextPath}/categorias/deactivate/${category.id}" method="post">
+                      <button type="submit" ${category.estado == 'Inactivo' ? 'style="visibility: hidden;"' : ''} onclick="return confirm('¿Deseas desactivar esta Categoria?')" class="btn-delete">Desactivar</button>
+                    </form>
+                    <!-- Boton de editar -->
+                    <a href="${pageContext.request.contextPath}/categorias/edit/${category.id}"><button class="btn-edit">Editar</button></a>
+                    
                   </div>
                 </td>
-              </tr>
-            </form>
+              </tr>            
           </c:forEach>
 
         </tbody>

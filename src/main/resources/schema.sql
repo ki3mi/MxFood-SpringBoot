@@ -3,7 +3,7 @@
 -- ===========================
 CREATE TABLE categoria (
   Id INT AUTO_INCREMENT PRIMARY KEY,
-  Nombre VARCHAR(100) NOT NULL UNIQUE,
+  Nombre VARCHAR(100) NOT NULL,
   Descripcion TEXT,
   Estado ENUM('Activo', 'Inactivo') NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB 
@@ -35,7 +35,7 @@ CREATE TABLE producto (
 CREATE TABLE usuario (
   Id INT AUTO_INCREMENT PRIMARY KEY,
   Nombre VARCHAR(255) NOT NULL,
-  Contrasena VARCHAR(255) NOT NULL,
+  Password VARCHAR(255) NOT NULL,
   Email VARCHAR(255) NOT NULL UNIQUE,
   Telefono VARCHAR(20),
   DNI VARCHAR(20) NOT NULL UNIQUE,

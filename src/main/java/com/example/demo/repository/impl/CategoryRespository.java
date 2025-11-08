@@ -26,8 +26,40 @@ public class CategoryRespository implements CategoryDAO{
         );
     };
 
+    // Listar categorias
     public List<Category> list(){
         String query = "SELECT * FROM categoria";
         return jdbcTemplate.query(query, categoryRowMapper);
+    }
+
+    // Crear Categoria
+    public int createCategory(Category category){
+        String query = "INSERT INTO categoria (Nombre, Descripcion, Estado) VALUES (?,?,?)";
+        return jdbcTemplate.update(query,
+                category.getNombre(),
+                category.getDescripcion(),
+                category.getEstado());
+    }
+
+    // Obtener categoria por ID
+    public Category getCategoryById(int id){
+        String query = "SELECT * FROM categoria WHERE Id = ?";
+        return jdbcTemplate.queryForObject(query, categoryRowMapper, id);
+    }
+
+    // Actualizar categoria
+    public int updateCategory(Category category){
+        String query = "UPDATE categoria SET Nombre = ?, Descripcion = ?, Estado = ? WHERE Id = ?";
+        return jdbcTemplate.update(query, 
+        category.getNombre(),
+        category.getDescripcion(),
+        category.getEstado(),
+        category.getId());
+    }
+
+    // Desactivar Categoria
+    public int deactivateCategory(int id){
+        String query = "UPDATE categoria SET Estado = 'Inactivo' WHERE Id = ?";
+        return jdbcTemplate.update(query, id);
     }
 }

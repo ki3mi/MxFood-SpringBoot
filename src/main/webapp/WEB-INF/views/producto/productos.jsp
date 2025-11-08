@@ -37,7 +37,6 @@
           <!-- Card 1 -->
           <c:forEach items="${products}" var="product">
 
-            <form action="">
               <article class="card">
                 <div class="media" style="background:linear-gradient(135deg,#fff2eb,#ffe7d8);">
                   <img src="../imag/taco-pastor.jpg" alt="img" class="img">
@@ -49,14 +48,22 @@
                     <div class="price">S/. ${product.precio}</div>
                   </div>
                   <p class="desc">${product.descripcion}</p>
-                  <div class="tags"><span class="tag">${product.category.nombre}</span></div>
+                  <div class="tags">
+                    <span class="tag">${product.category.nombre}</span>
+                    <span class="tag" ${product.estado == 'Inactivo' ? 'style="background-color: rgb(224, 118, 118); color: white; border-color: black;"' : ''}>${product.estado}</span>
+                  </div>
                   <div class="card-footer">
-                    <a href="editarPlatillo.html"><button class="ghost">Editar</button></a>
-                    <a href=""><button class="btn">Eliminar</button></a>
+                    
+                    <!-- BOTON DE EDITAR -->
+                    <a href="${pageContext.request.contextPath}/productos/edit/${product.id}"><button class="ghost">Editar</button></a>
+
+                    <!-- BOTON DE ELIMINAR -->
+                    <form action="${pageContext.request.contextPath}/productos/deactivate/${product.id}" method="post">
+                      <button type="submit" ${product.estado == 'Inactivo' ? 'style="visibility: hidden;"' : ''} onclick="return confirm('¿Deseas desactivar este producto?')" class="btn">Desactivar</button>
+                    </form>
                   </div>
                 </div>
               </article>
-            </form>
 
           </c:forEach>
         </section>

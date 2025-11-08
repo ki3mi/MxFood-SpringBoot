@@ -8,4 +8,7 @@ public interface ProductDAO {
     public List<Product> listProducts();
     public List<Product> listProductsCat();
     public int createProduct(Product product);
+    public Product getProductById(int id);
+    public int updateProduct(Product product);
+    public int deactivateProduct(int id);
 }
