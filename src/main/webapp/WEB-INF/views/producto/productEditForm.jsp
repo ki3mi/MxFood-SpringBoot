@@ -35,7 +35,7 @@
                         <select name="estado" required>
                             <option value="Disponible" ${product.estado=='Disponible' ? 'selected' : '' }>Disponible
                             </option>
-                            <option value="Agotado" ${product.estado=='Agotado' ? 'selected' : '' }>Agotado</option>
+                            <!-- <option value="Agotado" ${product.estado=='Agotado' ? 'selected' : '' }>Agotado</option> -->
                             <option value="Inactivo" ${product.estado=='Inactivo' ? 'selected' : '' }>Inactivo</option>
                         </select>
 

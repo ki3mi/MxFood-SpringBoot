@@ -1,34 +1,31 @@
 package com.example.demo.model;
 
+import java.math.BigDecimal;
+
 public class SaleDetail {
     private Integer id;
     private Integer idVenta;
-    private Integer idProduct;
     private Integer cantidad;
-    private Double subTotal;
+    private BigDecimal subTotal;
 
-    private Sale sale;
     private Product product;    
 
     public SaleDetail(){
 
     }
 
-    public SaleDetail(int id, int idVenta, int idProduct, int cantidad, Double subTotal){
+    public SaleDetail(int id, int idVenta, int idProduct, int cantidad, BigDecimal subTotal){
         this.id = id;
         this.idVenta = idVenta;
-        this.idProduct = idProduct;
         this.cantidad = cantidad;
         this.subTotal = subTotal;
     }
 
-    public SaleDetail(int id, int idVenta, int idProduct, int cantidad, Double subTotal, Sale sale, Product product){
+    public SaleDetail(int id, int idVenta, int idProduct, int cantidad, BigDecimal subTotal, Sale sale, Product product){
         this.id = id;
         this.idVenta = idVenta;
-        this.idProduct = idProduct;
         this.cantidad = cantidad;
         this.subTotal = subTotal;
-        this.sale = sale;
         this.product = product;
     }
 
@@ -48,14 +45,6 @@ public class SaleDetail {
         this.idVenta = idVenta;
     }
 
-    public Integer getIdProduct() {
-        return this.idProduct;
-    }
-
-    public void setIdProduct(Integer idProduct) {
-        this.idProduct = idProduct;
-    }
-
     public Integer getCantidad() {
         return this.cantidad;
     }
@@ -64,20 +53,12 @@ public class SaleDetail {
         this.cantidad = cantidad;
     }
 
-    public Double getSubTotal() {
+    public BigDecimal getSubTotal() {
         return this.subTotal;
     }
 
-    public void setSubTotal(Double subTotal) {
+    public void setSubTotal(BigDecimal subTotal) {
         this.subTotal = subTotal;
-    }
-
-    public Sale getSale() {
-        return this.sale;
-    }
-
-    public void setSale(Sale sale) {
-        this.sale = sale;
     }
 
     public Product getProduct() {

@@ -39,7 +39,6 @@ CREATE TABLE usuario (
   Email VARCHAR(255) NOT NULL UNIQUE,
   Telefono VARCHAR(20),
   DNI VARCHAR(20) NOT NULL UNIQUE,
-  Rol ENUM('Administrador','Vendedor','Cliente') NOT NULL DEFAULT 'Vendedor',
   Estado ENUM('Activo','Inactivo') NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB 
   DEFAULT CHARSET=utf8mb4 
@@ -50,6 +49,10 @@ CREATE TABLE usuario (
 -- ===========================
 CREATE TABLE venta (
   Id INT AUTO_INCREMENT PRIMARY KEY,
+  Nombre VARCHAR(255) NOT NULL,
+  Telefono VARCHAR(20),
+  DNI VARCHAR(20) NOT NULL,
+  Direccion VARCHAR(200),
   Tipo ENUM('Efectivo','Tarjeta','Transferencia','Yape/Plin') NOT NULL,
   Fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   Estado ENUM('Completada','Cancelada','Pendiente','En Delivery','Recojo en Tienda') 

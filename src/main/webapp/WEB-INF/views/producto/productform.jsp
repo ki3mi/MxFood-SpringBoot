@@ -30,7 +30,7 @@
 
                         <select name="estado">
                             <option value="Disponible">Disponible</option>
-                            <option value="Agotado">Agotado</option>
+                            <!-- <option value="Agotado">Agotado</option> -->
                             <option value="Inactivo">Inactivo</option>
                         </select>
 

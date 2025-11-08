@@ -1,23 +1,33 @@
 package com.example.demo.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Sale {
     private Integer id;
+    private String nombre;
+    private String telefono;
+    private String dni;  
+    private String direccion;
     private String tipo;
     private LocalDate fecha;
     private String estado;
-    private Double total;
+    private BigDecimal total;
     private Integer userId;
 
     private User user;
+    private List<SaleDetail> details;
 
-    
     public Sale(){
         
     }
-    public Sale(int id, String tipo, LocalDate fecha, String estado, Double total, int userId){
+    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, BigDecimal total, int userId){
         this.id = id;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.dni = dni;
+        this.direccion = direccion;
         this.tipo = tipo;
         this.fecha = fecha;
         this.estado = estado;
@@ -25,8 +35,12 @@ public class Sale {
         this.userId = userId;
     }
     
-    public Sale(int id, String tipo, LocalDate fecha, String estado, Double total, int userId, User user){
+    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, BigDecimal total, int userId, User user){
         this.id = id;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.dni = dni;
+        this.direccion = direccion;
         this.tipo = tipo;
         this.fecha = fecha;
         this.estado = estado;
@@ -67,11 +81,11 @@ public class Sale {
         this.estado = estado;
     }
 
-    public Double getTotal() {
+    public BigDecimal getTotal() {
         return this.total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 
@@ -90,6 +104,44 @@ public class Sale {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public List<SaleDetail> getDetails() {
+        return this.details;
+    }
+
+    public void setDetails(List<SaleDetail> details) {
+        this.details = details;
+    }
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefono() {
+        return this.telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDni() {
+        return this.dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
     
+    public String getDireccion() {
+        return this.direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 }
 
