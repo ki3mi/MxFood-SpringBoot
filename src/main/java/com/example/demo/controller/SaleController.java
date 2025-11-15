@@ -23,18 +23,18 @@ public class SaleController {
         this.saleService = saleService;
     }
 
-    @PostMapping("/registrar")
-    public String registerSale(@ModelAttribute Sale sale, HttpSession session){
-        User user = (User) session.getAttribute("userLogged");
-        sale.setUser(user);
+    // @PostMapping("/registrar")
+    // public String registerSale(@ModelAttribute Sale sale, HttpSession session){
+    //     User user = (User) session.getAttribute("userLogged");
+    //     sale.setUser(user);
 
-        BigDecimal total = sale.getDetails().stream()
-            .map(SaleDetail :: getSubTotal)
-            .reduce(BigDecimal.ZERO, BigDecimal::add);
+    //     BigDecimal total = sale.getDetails().stream()
+    //         .map(SaleDetail :: getSubTotal)
+    //         .reduce(BigDecimal.ZERO, BigDecimal::add);
                 
-        sale.setTotal(total);
+    //     sale.setTotal(total);
 
-        saleService.registerSale(sale);
-        return "redirect:/ventas";
-    }
+    //     saleService.registerSale(sale);
+    //     return "redirect:/ventas";
+    // }
 }

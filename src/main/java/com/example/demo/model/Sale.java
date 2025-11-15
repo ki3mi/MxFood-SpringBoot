@@ -16,7 +16,6 @@ public class Sale {
     private BigDecimal total;
     private Integer userId;
 
-    private User user;
     private List<SaleDetail> details;
 
     public Sale(){
@@ -35,7 +34,7 @@ public class Sale {
         this.userId = userId;
     }
     
-    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, BigDecimal total, int userId, User user){
+    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, BigDecimal total, int userId, List<SaleDetail> saleDetails){
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -46,7 +45,7 @@ public class Sale {
         this.estado = estado;
         this.total = total;
         this.userId = userId;
-        this.user = user;
+        this.details = saleDetails;
     }
     
     public Integer getId() {
@@ -95,14 +94,6 @@ public class Sale {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public User getUser() {
-        return this.user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public List<SaleDetail> getDetails() {

@@ -6,4 +6,6 @@ import com.example.demo.model.SaleDetail;
 
 public interface SaleDetailDAO {
     void saveAll(List<SaleDetail> details, int saleId);
+    public List<SaleDetail> listSaleDetails();
+    public List<SaleDetail> listByIdVenta(int id);
 }
