@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Sale;
+import com.example.demo.model.SaleDetail;
 import com.example.demo.repository.SaleDAO;
 
 @Repository

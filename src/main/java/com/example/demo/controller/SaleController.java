@@ -42,9 +42,9 @@ public class SaleController {
             .map(SaleDetail :: getSubTotal)
             .reduce(BigDecimal.ZERO, BigDecimal::add);
                 
-        sale.setTotal(total);
+         sale.setTotal(total);
 
-        saleService.registerSale(sale);
-        return "redirect:/ventas";
-    }
+         saleService.registerSale(sale);
+         return "redirect:/ventas";
+     }
 }
