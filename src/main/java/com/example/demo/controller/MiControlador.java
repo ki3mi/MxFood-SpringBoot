@@ -31,10 +31,10 @@ public class MiControlador {
         return "contacto/contacto";
     }
 
-    @GetMapping("/gestion-ventas")
-    public String gestionVentas(){
-        return "venta/gestion-ventas";
-    }
+    // @GetMapping("/gestion-ventas")
+    // public String gestionVentas(){
+    //     return "venta/gestion-ventas";
+    // }
 
     @GetMapping("/cuenta")
     public String cuenta(){

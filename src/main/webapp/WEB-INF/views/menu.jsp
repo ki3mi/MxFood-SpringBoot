@@ -50,7 +50,7 @@
             </a>
 
             <!-- Gestión de Ventas -->
-            <a href="/gestion-ventas" class="card">
+            <a href="/ventas/listar" class="card">
                 <img src="imag/Gestion.png" alt="Gestión de Ventas">
                 <p>Gestión de Ventas</p>
             </a>

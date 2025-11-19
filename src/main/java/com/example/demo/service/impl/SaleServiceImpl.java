@@ -1,5 +1,7 @@
 package com.example.demo.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +19,13 @@ public class SaleServiceImpl implements SaleService{
         this.saleDAO = saleDAO;
         this.saleDetailDAO = saleDetailDAO;
     }
+    
+    // Listar los productos
+    public List<Sale> list(){
+        return saleDAO.list();
+    }
 
+    // Registrar Venta
     @Transactional
     public void registerSale(Sale sale){
         int saleId = saleDAO.saveSale(sale);

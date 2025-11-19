@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,14 +23,14 @@ public class Sale {
     public Sale(){
         
     }
-    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, BigDecimal total, int userId){
+    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, Date fecha, String estado, BigDecimal total, int userId){
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.dni = dni;
         this.direccion = direccion;
         this.tipo = tipo;
-        this.fecha = fecha;
+        this.fecha = fecha.toLocalDate();
         this.estado = estado;
         this.total = total;
         this.userId = userId;

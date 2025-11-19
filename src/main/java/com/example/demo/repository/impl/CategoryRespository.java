@@ -50,7 +50,7 @@ public class CategoryRespository implements CategoryDAO{
     // Actualizar categoria
     public int updateCategory(Category category){
         String query = "UPDATE categoria SET Nombre = ?, Descripcion = ?, Estado = ? WHERE Id = ?";
-        return jdbcTemplate.update(query, 
+        return jdbcTemplate.update(query,
         category.getNombre(),
         category.getDescripcion(),
         category.getEstado(),
