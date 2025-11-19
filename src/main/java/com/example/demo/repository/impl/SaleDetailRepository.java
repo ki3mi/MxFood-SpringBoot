@@ -17,29 +17,23 @@ public class SaleDetailRepository implements SaleDetailDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private final RowMapper<SaleDetail> saleDetailRowMapper = (rs, rowNum) -> {
+    private final RowMapper<SaleDetail> saleDetailRowMapper = (rs, rowNum) ->{
         return new SaleDetail(
             rs.getInt("Id"),
-            rs.getInt("Venta_id"),
-            rs.getInt("Product_Id"),
+            rs.getInt("Venta_Id"),
+            rs.getInt("Producto_Id"),
             rs.getInt("Cantidad"),
             rs.getBigDecimal("Subtotal")
         );
     };
 
-    // Listar Detalles de venta
-    public List<SaleDetail> listSaleDetails(){
-        String query = "SELECT * FROM detalle_venta";
-        return jdbcTemplate.query(query, saleDetailRowMapper);
-    }
-
-    // Listar Detalles de venta por ID de Venta
-    public List<SaleDetail> listByIdVenta(int id){
+    // Listar todos los detalles de venta
+    public List<SaleDetail> list(int idSale){
         String query = "SELECT * FROM detalle_venta WHERE Venta_Id = ?";
-        return jdbcTemplate.query(query, saleDetailRowMapper, id);
+        return jdbcTemplate.query(query, saleDetailRowMapper, idSale);
     }
 
-    // Guardar todos los detalles de venta
+    // Guardar detalles de ventas
     public void saveAll(List<SaleDetail> details, int saleId){
         String query = "INSERT INTO detalle_venta (Venta_Id, Producto_Id, Cantidad, SubTotal) VALUES (?,?,?,?)";
         for (SaleDetail d : details){

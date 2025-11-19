@@ -2,6 +2,7 @@ package com.example.demo.repository.impl;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,7 +21,7 @@ public class SaleRepository implements SaleDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private final RowMapper<Sale> saleMapper = (rs, rowNum) -> {
+    private final RowMapper<Sale> saleRowMapper = (rs, rowNum) -> {
         return new Sale(
             rs.getInt("Id"),
             rs.getString("Nombre"),
@@ -28,13 +29,18 @@ public class SaleRepository implements SaleDAO{
             rs.getString("DNI"),
             rs.getString("Direccion"),
             rs.getString("Tipo"),
-            rs.getDate("Fecha").toLocalDate(),
+            rs.getDate("Fecha"),
             rs.getString("Estado"),
             rs.getBigDecimal("Total"),
-            rs.getInt("UserId")
+            rs.getInt("Usuario_Id")
         );
     };
-
+    // Listar las Ventas
+    public List<Sale> list(){
+        String query = "SELECT * FROM venta";
+        return jdbcTemplate.query(query, saleRowMapper);
+    }
+    // Guardar una Venta
     public int saveSale(Sale sale){
         String query = "INSERT INTO venta (Nombre, Telefono, DNI, Direccion, Tipo, Fecha, Estado, Total, Usuario_Id) VALUES (?,?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(query, 

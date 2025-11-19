@@ -53,9 +53,9 @@ CREATE TABLE venta (
   Telefono VARCHAR(20),
   DNI VARCHAR(20) NOT NULL,
   Direccion VARCHAR(200),
-  Tipo ENUM('Efectivo','Tarjeta','Transferencia','Yape/Plin') NOT NULL,
+  Tipo ENUM('Local','Delivery') NOT NULL,
   Fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  Estado ENUM('Completada','Cancelada','Pendiente','En Delivery','Recojo en Tienda') 
+  Estado ENUM('Completada','Cancelada','Pendiente','En Camino') 
     NOT NULL DEFAULT 'Completada',
   Total DECIMAL(10,2) NOT NULL,
   Usuario_Id INT NOT NULL,
@@ -72,12 +72,11 @@ CREATE TABLE venta (
 -- TABLA: detalle_venta
 -- ===========================
 CREATE TABLE detalle_venta (
-  Id INT NOT NULL,
+  Id INT AUTO_INCREMENT PRIMARY KEY,
   Venta_Id INT NOT NULL,
   Producto_Id INT NOT NULL,
   Cantidad INT NOT NULL,
   Subtotal DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (Id),
   CONSTRAINT fk_detalle_venta FOREIGN KEY (Venta_Id) 
     REFERENCES venta(Id)
     ON DELETE CASCADE

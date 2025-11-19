@@ -1,7 +1,5 @@
 package com.example.demo.model;
 
-import java.time.LocalDate;
-
 public class Product {
     private Integer id;
     private String nombre;
