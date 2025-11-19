@@ -15,9 +15,4 @@ public class SaleDetailController {
         this.saleDetailService = saleDetailService;
     }
 
-    @GetMapping("/list")
-    public String listSaleDetails(Model model){        
-        model.addAttribute("saledetails", saleDetailService.listSaleDetails());
-        return "ventas/details";
-    }
 }

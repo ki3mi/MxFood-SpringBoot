@@ -16,5 +16,5 @@ public class SaleDetailServiceImpl implements SaleDetailService{
         this.saleDetailDAO = saleDetailDAO;
     }
 
-    public List<SaleDetail> listSaleDetails(){return saleDetailDAO.listSaleDetails();}
+    public List<SaleDetail> list(int id){return saleDetailDAO.list(id);}
 }
