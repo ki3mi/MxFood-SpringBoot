@@ -7,4 +7,5 @@ import com.example.demo.model.Sale;
 public interface SaleDAO {
     public List<Sale> list();
     public int saveSale(Sale sale);
+    public Sale getById(int id);
 }

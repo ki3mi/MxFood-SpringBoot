@@ -75,6 +75,9 @@
                                 <form action="">
                                     <button type="submit">Desactivar</button>
                                 </form>
+                                <form action="${pageContext.request.contextPath}/ventas/detalle/${sale.id}">
+                                    <button type="submit">Detalles</button>
+                                </form>
                             </td>
                         </tr>
                     </c:forEach>

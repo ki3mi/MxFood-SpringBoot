@@ -39,6 +39,12 @@ public class SaleRepository implements SaleDAO{
         String query = "SELECT * FROM venta";
         return jdbcTemplate.query(query, saleRowMapper);
     }
+
+    // Obtener venta por id
+    public Sale getById(int id){
+        String query = "SELECT * FROM venta WHERE Id = ?";
+        return jdbcTemplate.queryForObject(query, saleRowMapper, id);
+    }
     // Guardar una Venta
     public int saveSale(Sale sale){
         String query = "INSERT INTO venta (Nombre, Telefono, DNI, Direccion, Tipo, Fecha, Estado, Total, Usuario_Id) VALUES (?,?,?,?,?,?,?,?,?)";
