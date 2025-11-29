@@ -28,11 +28,17 @@ public class SaleController {
         model.addAttribute("sales", saleService.list());
         return "venta/gestion-ventas";
     }
+    
 
     // Ver detalle de venta
     @GetMapping("/detalle/{id}")
-    public String saleDeatail(@PathVariable int id, Model model){
+    public String saleDetail(@PathVariable int id, Model model){
         model.addAttribute("sale", saleService.getById(id));
         return "venta/detalle-venta";
+    }
+    
+    @GetMapping("/agregardetalle")
+    public String addDetails(){
+        return "venta/agregarDetalles";
     }
 }

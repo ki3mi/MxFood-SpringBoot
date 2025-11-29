@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/venta.css">
 <body>
     <header class="header">
-        <a href="/menu"><img src="/imag/MexicanHosue.png" alt="Logo Mexican House" class="logo-img"></a>
+        <a href="/menu"><img src="${pageContext.request.contextPath}/imag/MexicanHosue.png" alt="Logo Mexican House" class="logo-img"></a>
         <h1>Registro de Ventas</h1>
     </header>
 
@@ -11,22 +11,30 @@
         <form action="">
             <section class="contenedor cliente">
                 <h2>Datos del Cliente</h2>
-                <label for="nombreCliente">Nombre:</label>
-                <input type="text" id="nombreCliente" class="input-text" placeholder="Nombre del cliente" name="nombre">
+                <input type="hidden" name="id" value="">
+                <label for="nombreCliente">Nombre: Paquito</label>
     
-                <label for="telefonoCliente">Teléfono:</label>
-                <input type="text" id="telefonoCliente" class="input-text" placeholder="Teléfono (9 dígitos)" name="telefono">
+                <label for="telefonoCliente">Teléfono: 99999999</label>
     
-                <label for="dniCliente">Documento (DNI):</label>
-                <input type="text" id="dniCliente" class="input-text" placeholder="DNI (8 dígitos)" name="dni">
+                <label for="dniCliente">Documento (DNI): 76767676</label>
     
-                <label for="dniCliente">Dirección:</label>
-                <input type="text" id="dniCliente" class="input-text" placeholder="Av. Ejemplo..." name="direccion">
+                <label for="dniCliente">Dirección: Av. Ejemplo</label>
             </section>
     
-            <!-- <section class="contenedor productos">
+            <section class="contenedor productos">
                 <h2>Productos</h2>
-                <select id="productos" class="input-text">
+                <!-- Barra de busqueda -->
+                <div class="searchBar">
+                    <form action="">
+                        <input type="text" id="dniCliente" class="input-text" placeholder="Buscar nombre..." name="dni">
+                        <button class="btn-search">Buscar</button>
+                    </form>                    
+                </div>
+                <ul class="productos-lista" id="productosSeleccionados">
+                    <li>Tacos: 2</li>
+                    <li>Chimichanga: 1</li>
+                </ul>
+                <!-- <select id="productos" class="input-text">
                     <option>Tacos al Pastor</option>
                     <option>Quesadilla de Pollo</option>
                     <option>Enchiladas Suizas</option>
@@ -37,25 +45,27 @@
                     <option>Menú Combo 1 (Familiar)</option>
                     <option>Guacamole y Totopos</option>
                     <option>Michelada</option>
-                </select>
-    
+                </select> -->
+
                 <h3>Productos Seleccionados</h3>
-                <ul class="productos-lista" id="productosSeleccionados"></ul>
-            </section> -->
+                <ul class="productos-lista" id="productosSeleccionados">
+                    <li>Tacos: 2</li>
+                    <li>Chimichanga: 1</li>
+                </ul>
+            </section>
     
             <section class="contenedor venta">
-                <h2>Tipo de Venta</h2>
-                <label><input type="radio" name="tipo" value="local" checked> En Local</label>
+                <!-- <h2>Tipo de Venta</h2>
+                <label><input type="radio" name="tipo" value="local" checked> En Local</label> -->
                 <!-- <label><input type="radio" name="tipoVenta" value="tienda"> Recoger en Tienda</label> -->
-                <label><input type="radio" name="tipo" value="delivery"> Delivery</label>
+                <!-- <label><input type="radio" name="tipo" value="delivery"> Delivery</label>
     
                 <h2>Método de Pago</h2>
                 <label><input type="radio" name="pago" value="efectivo" checked> Efectivo</label>
                 <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de Débito</label>
-                <label><input type="radio" name="pago" value="yape"> Yape/Plin</label>
+                <label><input type="radio" name="pago" value="yape"> Yape/Plin</label> -->
     
-                <a href="${pageContext.request.contextPath}/ventas/agregardetalle" class="btn-delivery">Continuar</a>
-                <!-- <a href="#modalBoleta" class="btn-delivery">Continuar</a> -->
+                <a href="#modalBoleta" class="btn-delivery">Continuar</a>
                 <!-- <a href="delivery.html" class="btn-delivery">Ir a Delivery</a> -->
             </section>
         </form>

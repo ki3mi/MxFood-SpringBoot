@@ -291,3 +291,25 @@ main.container {
     color: var(--color-verde-principal);
     margin-top: 10px;
 }
+
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.btn-search{
+    display: block;
+    width: 50%;
+    height: 45px;
+    /* padding: 1rem; */
+    /* margin-top: 10px; */
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-blanco);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    background: radial-gradient(circle, #9b59b6, #8e44ad);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
