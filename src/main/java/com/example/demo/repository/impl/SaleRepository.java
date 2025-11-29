@@ -45,20 +45,5 @@ public class SaleRepository implements SaleDAO{
         String query = "SELECT * FROM venta WHERE Id = ?";
         return jdbcTemplate.queryForObject(query, saleRowMapper, id);
     }
-    // Guardar una Venta
-    public int saveSale(Sale sale){
-        String query = "INSERT INTO venta (Nombre, Telefono, DNI, Direccion, Tipo, Fecha, Estado, Total, Usuario_Id) VALUES (?,?,?,?,?,?,?,?,?)";
-        jdbcTemplate.update(query, 
-                sale.getNombre(),
-                sale.getTelefono(),
-                sale.getDni(),
-                sale.getDireccion(),
-                sale.getTipo(),
-                sale.getFecha(),
-                sale.getEstado(),
-                sale.getTotal(),
-                sale.getUserId()
-        );
-        return jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
-    }
+    // Guardar una Venta SELECT LAST_INSERT_ID()
 }

@@ -32,17 +32,4 @@ public class SaleDetailRepository implements SaleDetailDAO{
         String query = "SELECT * FROM detalle_venta WHERE Venta_Id = ?";
         return jdbcTemplate.query(query, saleDetailRowMapper, idSale);
     }
-
-    // Guardar detalles de ventas
-    public void saveAll(List<SaleDetail> details, int saleId){
-        String query = "INSERT INTO detalle_venta (Venta_Id, Producto_Id, Cantidad, SubTotal) VALUES (?,?,?,?)";
-        for (SaleDetail d : details){
-            jdbcTemplate.update(query, saleId, 
-                        d.getProduct().getId(),
-                        d.getCantidad(),
-                        d.getCantidad(),
-                        d.getSubTotal()
-            );
-        }
-    }
 }

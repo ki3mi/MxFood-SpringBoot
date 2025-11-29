@@ -33,10 +33,5 @@ public class SaleServiceImpl implements SaleService{
         return sale;
     }
 
-    // Registrar Venta
-    @Transactional
-    public void registerSale(Sale sale){
-        int saleId = saleDAO.saveSale(sale);
-        saleDetailDAO.saveAll(sale.getDetails(), saleId);
-    }
+    
 }

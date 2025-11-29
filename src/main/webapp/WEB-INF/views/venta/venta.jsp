@@ -8,52 +8,57 @@
     </header>
 
     <main class="container">
+        <form action="">
+            <section class="contenedor cliente">
+                <h2>Datos del Cliente</h2>
+                <label for="nombreCliente">Nombre:</label>
+                <input type="text" id="nombreCliente" class="input-text" placeholder="Nombre del cliente" name="nombre">
+    
+                <label for="telefonoCliente">Teléfono:</label>
+                <input type="text" id="telefonoCliente" class="input-text" placeholder="Teléfono (9 dígitos)" name="telefono">
+    
+                <label for="dniCliente">Documento (DNI):</label>
+                <input type="text" id="dniCliente" class="input-text" placeholder="DNI (8 dígitos)" name="dni">
+    
+                <label for="dniCliente">Dirección:</label>
+                <input type="text" id="dniCliente" class="input-text" placeholder="Av. Ejemplo..." name="direccion">
+            </section>
+    
+            <!-- <section class="contenedor productos">
+                <h2>Productos</h2>
+                <select id="productos" class="input-text">
+                    <option>Tacos al Pastor</option>
+                    <option>Quesadilla de Pollo</option>
+                    <option>Enchiladas Suizas</option>
+                    <option>Agua Fresca de Jamaica</option>
+                    <option>Burrito de Carnitas</option>
+                    <option>Pozole Rojo Grande</option>
+                    <option>Flan Casero</option>
+                    <option>Menú Combo 1 (Familiar)</option>
+                    <option>Guacamole y Totopos</option>
+                    <option>Michelada</option>
+                </select>
+    
+                <h3>Productos Seleccionados</h3>
+                <ul class="productos-lista" id="productosSeleccionados"></ul>
+            </section> -->
+    
+            <section class="contenedor venta">
+                <h2>Tipo de Venta</h2>
+                <label><input type="radio" name="tipo" value="local" checked> En Local</label>
+                <!-- <label><input type="radio" name="tipoVenta" value="tienda"> Recoger en Tienda</label> -->
+                <label><input type="radio" name="tipo" value="delivery"> Delivery</label>
+    
+                <h2>Método de Pago</h2>
+                <label><input type="radio" name="pago" value="efectivo" checked> Efectivo</label>
+                <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de Débito</label>
+                <label><input type="radio" name="pago" value="yape"> Yape/Plin</label>
+    
+                <a href="#modalBoleta" class="btn-completar">Completar Compra</a>
+                <a href="delivery.html" class="btn-delivery">Ir a Delivery</a>
+            </section>
+        </form>
 
-        <section class="contenedor cliente">
-            <h2>Datos del Cliente</h2>
-            <label for="nombreCliente">Nombre:</label>
-            <input type="text" id="nombreCliente" class="input-text" placeholder="Nombre del cliente">
-
-            <label for="telefonoCliente">Teléfono:</label>
-            <input type="text" id="telefonoCliente" class="input-text" placeholder="Teléfono (9 dígitos)">
-
-            <label for="dniCliente">Documento (DNI):</label>
-            <input type="text" id="dniCliente" class="input-text" placeholder="DNI (8 dígitos)">
-        </section>
-
-        <section class="contenedor productos">
-            <h2>Productos</h2>
-            <select id="productos" class="input-text">
-                <option>Tacos al Pastor</option>
-                <option>Quesadilla de Pollo</option>
-                <option>Enchiladas Suizas</option>
-                <option>Agua Fresca de Jamaica</option>
-                <option>Burrito de Carnitas</option>
-                <option>Pozole Rojo Grande</option>
-                <option>Flan Casero</option>
-                <option>Menú Combo 1 (Familiar)</option>
-                <option>Guacamole y Totopos</option>
-                <option>Michelada</option>
-            </select>
-
-            <h3>Productos Seleccionados</h3>
-            <ul class="productos-lista" id="productosSeleccionados"></ul>
-        </section>
-
-        <section class="contenedor venta">
-            <h2>Tipo de Venta</h2>
-            <label><input type="radio" name="tipoVenta" value="local" checked> En Local</label>
-            <label><input type="radio" name="tipoVenta" value="tienda"> Recoger en Tienda</label>
-            <label><input type="radio" name="tipoVenta" value="delivery"> Delivery</label>
-
-            <h2>Método de Pago</h2>
-            <label><input type="radio" name="pago" value="efectivo" checked> Efectivo</label>
-            <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de Débito</label>
-            <label><input type="radio" name="pago" value="yape"> Yape/Plin</label>
-
-            <a href="#modalBoleta" class="btn-completar">Completar Compra</a>
-            <a href="delivery.html" class="btn-delivery">Ir a Delivery</a>
-        </section>
 
     </main>
 
