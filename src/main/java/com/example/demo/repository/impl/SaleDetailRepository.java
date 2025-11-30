@@ -23,7 +23,7 @@ public class SaleDetailRepository implements SaleDetailDAO{
             rs.getInt("Venta_Id"),
             rs.getInt("Producto_Id"),
             rs.getInt("Cantidad"),
-            rs.getBigDecimal("Subtotal")
+            rs.getDouble("Subtotal")
         );
     };
 
@@ -31,5 +31,16 @@ public class SaleDetailRepository implements SaleDetailDAO{
     public List<SaleDetail> list(int idSale){
         String query = "SELECT * FROM detalle_venta WHERE Venta_Id = ?";
         return jdbcTemplate.query(query, saleDetailRowMapper, idSale);
+    }
+
+    // Agregar un detalle de venta
+    public int createDetail(SaleDetail saleDetail){
+        String query = "INSERT INTO detalle_venta (Venta_Id, Producto_Id, Cantidad, Subtotal) VALUES (?,?,?,?)";
+        return jdbcTemplate.update(query, 
+                saleDetail.getIdVenta(),
+                saleDetail.getIdProducto(),
+                saleDetail.getCantidad(),
+                saleDetail.getSubTotal()
+        );
     }
 }

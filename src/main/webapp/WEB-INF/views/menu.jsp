@@ -14,7 +14,7 @@
         <div class="menu">
 
             <!-- CRUD Registro de Ventas -->
-            <a href="/venta" class="card">
+            <a href="ventas/registrar" class="card">
                 <img src="imag/RegV.png" alt="CRUD Registro de Ventas">
                 <p> Registro de Ventas</p>
             </a>

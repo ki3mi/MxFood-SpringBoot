@@ -22,4 +22,5 @@ public class ProductSeviceImpl implements ProductService{
     public Product getProductById(int id){return productDAO.getProductById(id);}
     public void updateProduct(Product product){productDAO.updateProduct(product);}
     public void deactivateProduct(int id){productDAO.deactivateProduct(id);}
+    public List<Product> listQueryProducts(String query){return productDAO.listQueryProducts(query);}
 }

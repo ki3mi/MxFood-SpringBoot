@@ -54,7 +54,7 @@
                 <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de Débito</label>
                 <label><input type="radio" name="pago" value="yape"> Yape/Plin</label>
     
-                <a href="${pageContext.request.contextPath}/ventas/agregardetalle" class="btn-delivery">Continuar</a>
+                <a href="${pageContext.request.contextPath}/ventas/agregardetalle/1" class="btn-delivery">Continuar</a>
                 <!-- <a href="#modalBoleta" class="btn-delivery">Continuar</a> -->
                 <!-- <a href="delivery.html" class="btn-delivery">Ir a Delivery</a> -->
             </section>

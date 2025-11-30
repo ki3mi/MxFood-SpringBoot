@@ -6,4 +6,5 @@ import com.example.demo.model.SaleDetail;
 
 public interface SaleDetailService {
     public List<SaleDetail> list(int id);
+    void createDetail(SaleDetail saleDetail);
 }

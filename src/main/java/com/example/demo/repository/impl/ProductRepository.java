@@ -107,4 +107,10 @@ public class ProductRepository implements ProductDAO{
         String query = "UPDATE producto SET Estado = 'Inactivo' WHERE Id = ?";
         return jdbcTemplate.update(query, id);
     }
+
+    // Obtener lista de productos mediante filtrados
+    public List<Product> listQueryProducts(String query){
+        String sql = "SELECT * FROM producto WHERE Nombre LIKE ?";
+        return jdbcTemplate.query(sql, productRowMapper, "%" + query + "%");
+    }
 }

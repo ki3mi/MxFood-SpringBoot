@@ -10,4 +10,5 @@ public interface ProductService {
     public Product getProductById(int id);
     void updateProduct(Product product);
     void deactivateProduct(int id);
+    public List<Product> listQueryProducts(String query);
 }

@@ -11,4 +11,5 @@ public interface ProductDAO {
     public Product getProductById(int id);
     public int updateProduct(Product product);
     public int deactivateProduct(int id);
+    public List<Product> listQueryProducts(String query);
 }

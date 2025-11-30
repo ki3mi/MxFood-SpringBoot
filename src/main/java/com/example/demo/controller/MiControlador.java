@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MiControlador {
 
-    @GetMapping("/venta")
-    public String venta(){
-        return "venta/venta";
-    }
-
     @GetMapping("/catalogo")
     public String catalogo(){
         return "producto/catalogo";
@@ -30,11 +25,6 @@ public class MiControlador {
     public String contacto(){
         return "contacto/contacto";
     }
-
-    // @GetMapping("/gestion-ventas")
-    // public String gestionVentas(){
-    //     return "venta/gestion-ventas";
-    // }
 
     @GetMapping("/cuenta")
     public String cuenta(){

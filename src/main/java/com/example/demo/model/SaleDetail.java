@@ -5,8 +5,9 @@ import java.math.BigDecimal;
 public class SaleDetail {
     private Integer id;
     private Integer idVenta;
+    private Integer idProducto;    
     private Integer cantidad;
-    private BigDecimal subTotal;
+    private Double subTotal;
 
     private Product product;    
 
@@ -14,16 +15,18 @@ public class SaleDetail {
 
     }
 
-    public SaleDetail(int id, int idVenta, int idProduct, int cantidad, BigDecimal subTotal){
+    public SaleDetail(int id, int idVenta, int idProducto, int cantidad, Double subTotal){
         this.id = id;
         this.idVenta = idVenta;
+        this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.subTotal = subTotal;
     }
 
-    public SaleDetail(int id, int idVenta, int idProduct, int cantidad, BigDecimal subTotal, Sale sale, Product product){
+    public SaleDetail(int id, int idVenta, int idProducto, int cantidad, Double subTotal, Sale sale, Product product){
         this.id = id;
         this.idVenta = idVenta;
+        this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.subTotal = subTotal;
         this.product = product;
@@ -53,11 +56,11 @@ public class SaleDetail {
         this.cantidad = cantidad;
     }
 
-    public BigDecimal getSubTotal() {
+    public Double getSubTotal() {
         return this.subTotal;
     }
 
-    public void setSubTotal(BigDecimal subTotal) {
+    public void setSubTotal(Double subTotal) {
         this.subTotal = subTotal;
     }
 
@@ -68,4 +71,12 @@ public class SaleDetail {
     public void setProduct(Product product) {
         this.product = product;
     }
+    public Integer getIdProducto() {
+        return this.idProducto;
+    }
+
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
+    }
+
 }
