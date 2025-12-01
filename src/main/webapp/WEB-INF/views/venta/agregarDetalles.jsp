@@ -56,7 +56,9 @@
         </section>
     
         <section class="contenedor venta">
-            <a href="#modalBoleta" class="btn-delivery">Continuar</a>
+            <form action="${pageContext.request.contextPath}/ventas/closeSale/${sale.id}" method="post">
+                <a class="btn-delivery"><button type="submit">Continuar</button></a>
+            </form>
             <!-- <a href="delivery.html" class="btn-delivery">Ir a Delivery</a> -->
         </section>
     </main>

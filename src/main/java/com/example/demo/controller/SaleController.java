@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.model.Sale;
 import com.example.demo.model.SaleDetail;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.SaleDetailService;
@@ -33,8 +34,9 @@ public class SaleController {
     }
 
     // Registrar venta
-    @GetMapping("/registrar")
-    public String venta(){
+    @RequestMapping("/registrar")
+    public String venta(Model model){
+        model.addAttribute("sale", new Sale());
         return "venta/venta";
     }
 
@@ -53,7 +55,14 @@ public class SaleController {
         return "venta/detalle-venta";
     }
     
-    // PENDIENTE
+    // Procesar Solicitud para crear una venta
+    @PostMapping("/createSale")
+    public String createSale(@ModelAttribute Sale sale){
+        int id = saleService.createSale(sale);
+        return "redirect:/ventas/agregardetalle/" + id;
+    }
+
+    // Agregar detalles de venta
     @RequestMapping("/agregardetalle/{id}")
     public String addDetails(@PathVariable int id,
                     @RequestParam(required = false) String query,
@@ -65,10 +74,17 @@ public class SaleController {
         return "venta/agregarDetalles";
     }
 
-    // Procesar solicitud de creación
+    // Procesar solicitud de creación para un detalle de venta
     @PostMapping("/agregardetalle")
     public String addNewDetail(@ModelAttribute SaleDetail saleDetail){
         saleDetailService.createDetail(saleDetail);
         return "redirect:/ventas/agregardetalle/" + saleDetail.getIdVenta();
+    }
+
+    // Cerrar venta
+    @PostMapping("/closeSale/{id}")
+    public String closeSale(@PathVariable int id){
+        saleService.closeSale(id);
+        return "redirect:/ventas/registrar";
     }
 }

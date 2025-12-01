@@ -3,7 +3,6 @@ package com.example.demo.service.impl;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.Sale;
 import com.example.demo.model.SaleDetail;
@@ -33,5 +32,19 @@ public class SaleServiceImpl implements SaleService{
         return sale;
     }
 
+    public int createSale(Sale sale){
+        sale.setEstado("Pendiente");
+        sale.setTotal(0.0);
+        return saleDAO.createSale(sale);
+    }
+
+    public void closeSale(int id){
+        List<SaleDetail> lisDetails = saleDetailDAO.list(id);
+        Double total = 0.0;
+        for (SaleDetail saleDetail : lisDetails) {
+            total = total + saleDetail.getSubTotal();
+        }
+        saleDAO.closeSale(id, total);
+    }
     
 }

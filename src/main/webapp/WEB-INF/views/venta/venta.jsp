@@ -8,7 +8,7 @@
     </header>
 
     <main class="container">
-        <form action="">
+        <form action="${pageContext.request.contextPath}/ventas/createSale" method="post">
             <section class="contenedor cliente">
                 <h2>Datos del Cliente</h2>
                 <label for="nombreCliente">Nombre:</label>
@@ -24,39 +24,16 @@
                 <input type="text" id="dniCliente" class="input-text" placeholder="Av. Ejemplo..." name="direccion">
             </section>
     
-            <!-- <section class="contenedor productos">
-                <h2>Productos</h2>
-                <select id="productos" class="input-text">
-                    <option>Tacos al Pastor</option>
-                    <option>Quesadilla de Pollo</option>
-                    <option>Enchiladas Suizas</option>
-                    <option>Agua Fresca de Jamaica</option>
-                    <option>Burrito de Carnitas</option>
-                    <option>Pozole Rojo Grande</option>
-                    <option>Flan Casero</option>
-                    <option>Menú Combo 1 (Familiar)</option>
-                    <option>Guacamole y Totopos</option>
-                    <option>Michelada</option>
-                </select>
-    
-                <h3>Productos Seleccionados</h3>
-                <ul class="productos-lista" id="productosSeleccionados"></ul>
-            </section> -->
-    
             <section class="contenedor venta">
                 <h2>Tipo de Venta</h2>
-                <label><input type="radio" name="tipo" value="local" checked> En Local</label>
+                <label><input type="radio" name="tipo" value="Local" checked> En Local</label>
                 <!-- <label><input type="radio" name="tipoVenta" value="tienda"> Recoger en Tienda</label> -->
-                <label><input type="radio" name="tipo" value="delivery"> Delivery</label>
+                <label><input type="radio" name="tipo" value="Delivery"> Delivery</label>
     
-                <h2>Método de Pago</h2>
-                <label><input type="radio" name="pago" value="efectivo" checked> Efectivo</label>
-                <label><input type="radio" name="pago" value="tarjeta"> Tarjeta de Débito</label>
-                <label><input type="radio" name="pago" value="yape"> Yape/Plin</label>
-    
-                <a href="${pageContext.request.contextPath}/ventas/agregardetalle/1" class="btn-delivery">Continuar</a>
-                <!-- <a href="#modalBoleta" class="btn-delivery">Continuar</a> -->
-                <!-- <a href="delivery.html" class="btn-delivery">Ir a Delivery</a> -->
+                
+                <input type="hidden" name="userId" value="${sessionScope.userLogged.id}">
+                <a class="btn-delivery"><button type="submit">Continuar</button></a>
+                
             </section>
         </form>
 

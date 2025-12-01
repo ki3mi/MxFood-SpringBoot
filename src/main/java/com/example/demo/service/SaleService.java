@@ -7,4 +7,6 @@ import com.example.demo.model.Sale;
 public interface SaleService {
     public List<Sale> list();
     public Sale getById(int id);
+    public int createSale(Sale sale);
+    void closeSale(int id);
 }

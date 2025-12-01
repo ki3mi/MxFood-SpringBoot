@@ -14,7 +14,7 @@ public class Sale {
     private String tipo;
     private LocalDate fecha;
     private String estado;
-    private BigDecimal total;
+    private Double total;
     private Integer userId;
 
     private List<SaleDetail> details;
@@ -22,7 +22,7 @@ public class Sale {
     public Sale(){
         
     }
-    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, Date fecha, String estado, BigDecimal total, int userId){
+    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, Date fecha, String estado, Double total, int userId){
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -35,7 +35,7 @@ public class Sale {
         this.userId = userId;
     }
     
-    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, BigDecimal total, int userId, List<SaleDetail> saleDetails){
+    public Sale(int id, String nombre, String telefono, String dni, String direccion, String tipo, LocalDate fecha, String estado, Double total, int userId, List<SaleDetail> saleDetails){
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -81,11 +81,11 @@ public class Sale {
         this.estado = estado;
     }
 
-    public BigDecimal getTotal() {
+    public Double getTotal() {
         return this.total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 

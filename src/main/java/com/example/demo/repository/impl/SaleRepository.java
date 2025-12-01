@@ -30,7 +30,7 @@ public class SaleRepository implements SaleDAO{
             rs.getString("Tipo"),
             rs.getDate("Fecha"),
             rs.getString("Estado"),
-            rs.getBigDecimal("Total"),
+            rs.getDouble("Total"),
             rs.getInt("Usuario_Id")
         );
     };
@@ -46,4 +46,24 @@ public class SaleRepository implements SaleDAO{
         return jdbcTemplate.queryForObject(query, saleRowMapper, id);
     }
     // Guardar una Venta SELECT LAST_INSERT_ID()
+    public int createSale(Sale sale){
+        String query = "INSERT INTO venta (Nombre, Telefono, DNI, Direccion, Tipo, Estado, Total, Usuario_Id) VALUES (?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(query, 
+                sale.getNombre(),
+                sale.getTelefono(),
+                sale.getDni(),
+                sale.getDireccion(),
+                sale.getTipo(),
+                sale.getEstado(),
+                sale.getTotal(),
+                sale.getUserId());
+        String newQuery = "SELECT LAST_INSERT_ID()";
+        return jdbcTemplate.queryForObject(newQuery, Integer.class);
+    }
+
+    // Cerrar la venta
+    public int closeSale(int id, Double total){
+        String query = "UPDATE venta SET Estado = ?, Total = ? WHERE Id = ?";
+        return jdbcTemplate.update(query, "Completada", total, id);
+    }
 }
