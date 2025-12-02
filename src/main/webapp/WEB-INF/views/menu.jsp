@@ -17,18 +17,18 @@
             <a href="ventas/registrar" class="card">
                 <img src="imag/RegV.png" alt="CRUD Registro de Ventas">
                 <p> Registro de Ventas</p>
-            </a>
+            </a> 
 
-            <!-- CRUD Catálogo de Productos -->
-            <a href="/productos" class="card">
-                <img src="imag/CrudCatalogo.png" alt="CRUD Catálogo de Productos">
-                <p>Productos</p>
+            <!-- Delivery / Pedidos pendientes -->
+            <a href="/pendientes" class="card">
+                <img src="imag/Camino.png" alt="Camino">
+                <p>Pendientes / Delivery</p>
             </a>
-
-            <!-- Publicidad -->
-            <a href="/publicidad" class="card">
-                <img src="imag/Pub.png" alt="Publicidad">
-                <p>Publicidad</p>
+            
+            <!-- Gestión de Ventas -->
+            <a href="/ventas/listar" class="card">
+                <img src="imag/Gestion.png" alt="Gestión de Ventas">
+                <p>Gestión de Ventas</p>
             </a>
 
             <!-- Métricas -->
@@ -36,24 +36,24 @@
                 <img src="imag/Stats.png" alt="Métricas">
                 <p>Métricas</p>
             </a>
-
-            <!-- Catálogo de Productos (visual) -->
-            <a href="/catalogo" class="card">
-                <img src="imag/CatPro.png" alt="Catálogo de Productos">
-                <p>Catálogo de Productos</p>
+            
+            <!-- CRUD Catálogo de Productos -->
+            <a href="/productos" class="card">
+                <img src="imag/CrudCatalogo.png" alt="CRUD Catálogo de Productos">
+                <p>Productos</p>
             </a>
+            
+            <!-- Publicidad -->
+            <a href="/publicidad" class="card">
+                <img src="imag/Pub.png" alt="Publicidad">
+                <p>Publicidad</p>
+            </a>            
 
             <!-- Contacto -->
             <a href="/contacto" class="card">
                 <img src="imag/Cont.png" alt="Contacto">
                 <p>Contacto</p>
-            </a>
-
-            <!-- Gestión de Ventas -->
-            <a href="/ventas/listar" class="card">
-                <img src="imag/Gestion.png" alt="Gestión de Ventas">
-                <p>Gestión de Ventas</p>
-            </a>
+            </a>            
 
             <!-- Información de Cuenta -->
             <a href="/cuenta" class="card">

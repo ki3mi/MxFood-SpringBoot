@@ -36,8 +36,14 @@ public class SaleRepository implements SaleDAO{
     };
     // Listar las Ventas
     public List<Sale> list(){
-        String query = "SELECT * FROM venta";
+        String query = "SELECT * FROM venta ORDER BY Id DESC";
         return jdbcTemplate.query(query, saleRowMapper);
+    }
+
+    // Listar ventas pendientes
+    public List<Sale> listPending(){
+        String query = "SELECT * FROM venta WHERE Estado = ? OR Estado = ?";
+        return jdbcTemplate.query(query, saleRowMapper, "Pendiente", "En Camino");
     }
 
     // Obtener venta por id
@@ -45,7 +51,7 @@ public class SaleRepository implements SaleDAO{
         String query = "SELECT * FROM venta WHERE Id = ?";
         return jdbcTemplate.queryForObject(query, saleRowMapper, id);
     }
-    // Guardar una Venta SELECT LAST_INSERT_ID()
+    // Guardar una Venta
     public int createSale(Sale sale){
         String query = "INSERT INTO venta (Nombre, Telefono, DNI, Direccion, Tipo, Estado, Total, Usuario_Id) VALUES (?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(query, 
@@ -61,9 +67,9 @@ public class SaleRepository implements SaleDAO{
         return jdbcTemplate.queryForObject(newQuery, Integer.class);
     }
 
-    // Cerrar la venta
-    public int closeSale(int id, Double total){
+    // Cerrar la venta / Cambiar estado
+    public int closeSale(int id, Double total, String estado){
         String query = "UPDATE venta SET Estado = ?, Total = ? WHERE Id = ?";
-        return jdbcTemplate.update(query, "Completada", total, id);
+        return jdbcTemplate.update(query, estado, total, id);
     }
 }

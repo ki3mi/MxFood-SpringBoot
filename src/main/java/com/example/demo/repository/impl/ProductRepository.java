@@ -78,10 +78,14 @@ public class ProductRepository implements ProductDAO{
     }
 
     // Obtener producto por ID
+    public Product getProductByIdTest(int id){
+        String query = "SELECT * FROM producto WHERE Id = ?";
+        return jdbcTemplate.queryForObject(query, productRowMapper, id);
+    }
     public Product getProductById(int id){
         String query = """
                 SELECT
-                    p.Id, p.Nombre, p.Descripcion, p.Precio, p.Estado, p.Estado, p.Categoria_Id,
+                    p.Id, p.Nombre, p.Descripcion, p.Precio, p.Estado, p.Categoria_Id,
                     c.Id AS c_Id, c.Nombre AS c_Nombre, c.Descripcion AS c_Descripcion, c.Estado AS c_Estado
                 FROM producto p
                 INNER JOIN categoria c ON p.Categoria_Id = c.Id

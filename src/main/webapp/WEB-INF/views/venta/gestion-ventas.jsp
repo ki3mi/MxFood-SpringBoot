@@ -73,10 +73,11 @@
                             <td>${sale.fecha}</td>
                             <td class="eliminar">
                                 <form action="">
-                                    <button type="submit">Desactivar</button>
+                                    <!-- <button class="boton-buscar" style="background-color: rgb(113, 79, 207);" type="submit">Desactivar</button> -->
                                 </form>
-                                <form action="${pageContext.request.contextPath}/ventas/detalle/${sale.id}">
-                                    <button type="submit">Detalles</button>
+                                <form action="${pageContext.request.contextPath}/ventas/boleta/${sale.id}">
+                                    <input type="hidden" name="isList" value="true">
+                                    <button class="boton-buscar" type="submit">Detalles</button>
                                 </form>
                             </td>
                         </tr>

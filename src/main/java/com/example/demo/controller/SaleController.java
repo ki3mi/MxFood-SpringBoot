@@ -33,13 +33,7 @@ public class SaleController {
         return "redirect:/ventas/listar";
     }
 
-    // Registrar venta
-    @RequestMapping("/registrar")
-    public String venta(Model model){
-        model.addAttribute("sale", new Sale());
-        return "venta/venta";
-    }
-
+    
     // Listar Ventas
     @GetMapping("/listar")
     public String listSales(Model model){
@@ -47,6 +41,12 @@ public class SaleController {
         return "venta/gestion-ventas";
     }
     
+    // Registrar venta
+    @RequestMapping("/registrar")
+    public String venta(Model model){
+        model.addAttribute("sale", new Sale());
+        return "venta/venta";
+    }
 
     // Ver detalle de venta
     @GetMapping("/detalle/{id}")
@@ -85,6 +85,16 @@ public class SaleController {
     @PostMapping("/closeSale/{id}")
     public String closeSale(@PathVariable int id){
         saleService.closeSale(id);
-        return "redirect:/ventas/registrar";
+        return "redirect:/ventas/boleta/"+id+"?isList=false";
+    }
+
+    // Mostrar boleta
+    @GetMapping("/boleta/{id}")
+    public String showTicket(@PathVariable int id,
+                    @RequestParam(required = false) Boolean isList,
+                    Model model){
+        model.addAttribute("sale", saleService.getById(id));
+        model.addAttribute("isList", isList);
+        return "venta/boleta";
     }
 }

@@ -1,10 +1,10 @@
 package com.example.demo.service.impl;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.Product;
 import com.example.demo.model.SaleDetail;
 import com.example.demo.repository.ProductDAO;
 import com.example.demo.repository.SaleDetailDAO;
@@ -23,9 +23,9 @@ public class SaleDetailServiceImpl implements SaleDetailService{
     public List<SaleDetail> list(int id){
         List<SaleDetail> listDetails = saleDetailDAO.list(id);
         for (SaleDetail saleDetail : listDetails) {
-            saleDetail.setProduct(
-                productDAO.getProductById(saleDetail.getIdProducto())
-            );
+            int idProduct = saleDetail.getIdProducto();
+            Product product = productDAO.getProductByIdTest(idProduct);
+            saleDetail.setProduct(product);
         }
         return listDetails;
     }

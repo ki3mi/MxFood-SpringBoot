@@ -1,7 +1,5 @@
 package com.example.demo.model;
 
-import java.math.BigDecimal;
-
 public class SaleDetail {
     private Integer id;
     private Integer idVenta;
@@ -23,7 +21,7 @@ public class SaleDetail {
         this.subTotal = subTotal;
     }
 
-    public SaleDetail(int id, int idVenta, int idProducto, int cantidad, Double subTotal, Sale sale, Product product){
+    public SaleDetail(int id, int idVenta, int idProducto, int cantidad, Double subTotal, Product product){
         this.id = id;
         this.idVenta = idVenta;
         this.idProducto = idProducto;

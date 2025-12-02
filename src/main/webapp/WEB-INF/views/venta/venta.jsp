@@ -32,77 +32,9 @@
     
                 
                 <input type="hidden" name="userId" value="${sessionScope.userLogged.id}">
-                <a class="btn-delivery"><button type="submit">Continuar</button></a>
+                <button class="btn-delivery" type="submit">Continuar</button>
                 
             </section>
         </form>
-
-
     </main>
-
-    <div id="modalBoleta" class="modal">
-        <div class="modal-contenido">
-            <a href="#" class="cerrar-modal">&times;</a>
-            <h2>Boleta de Compra</h2>
-
-            <div id="detalleBoleta" class="boleta-detalle">
-                <div class="boleta-header">
-                    <p><strong>Razón Social:</strong> Mexican House S.A.C.</p>
-                    <p><strong>RUC:</strong> 20567891234</p>
-                    <p><strong>Fecha/Hora:</strong> 20/04/2025 19:45</p>
-                    <hr>
-                </div>
-
-                <div class="boleta-cliente">
-                    <p><strong>Cliente:</strong> Juan Cueva </p>
-                    <p><strong>DNI:</strong> 12345678 </p>
-                    <p><strong>Tipo Venta:</strong> En Local</p>
-                    <p><strong>Método Pago:</strong> Efectivo</p>
-                    <hr>
-                </div>
-
-                <div class="boleta-productos">
-                    <p class="productos-titulo"><strong>DETALLE DE PRODUCTOS:</strong></p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Cant.</th>
-                                <th>Producto</th>
-                                <th>Precio Unit.</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2</td>
-                                <td>Tacos al Pastor</td>
-                                <td>$ 15.00</td>
-                                <td>$ 30.00</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Quesadilla de Pollo</td>
-                                <td>$ 18.00</td>
-                                <td>$ 18.00</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Agua de Jamaica</td>
-                                <td>$ 6.00</td>
-                                <td>$ 6.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                </div>
-
-                <div class="boleta-totales">
-                    <p>Subtotal: $ 54.00</p>
-                    <p>IGV (18%): $ 9.72</p>
-                    <p class="total-final"><strong>TOTAL A PAGAR: $ 63.72</strong></p>
-                </div>
-            </div>
-            <a href="#" class="btn-cerrar">Cerrar</a>
-        </div>
-    </div>
 </body>
