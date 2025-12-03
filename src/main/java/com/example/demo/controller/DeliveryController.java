@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.model.Sale;
-import com.example.demo.model.SaleDetail;
 import com.example.demo.service.SaleService;
 
 @Controller

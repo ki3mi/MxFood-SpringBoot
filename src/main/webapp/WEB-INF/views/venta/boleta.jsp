@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <link rel="stylesheet" href="/css/venta.css">
 <body>
     <header class="header">
@@ -54,8 +56,8 @@
                 </div>
     
                 <div class="boleta-totales">
-                    <p>Subtotal: S/. ${sale.total*0.82}</p>
-                    <p>IGV (18%): S/. ${sale.total*0.18}</p>
+                    <p>Subtotal: S/. <fmt:formatNumber value="${sale.total * 0.82}" type="number" minFractionDigits="2" maxFractionDigits="2"/></p>
+                    <p>IGV (18%): S/. <fmt:formatNumber value="${sale.total * 0.18}" type="number" minFractionDigits="2" maxFractionDigits="2"/></p>
                     <p class="total-final"><strong>TOTAL A PAGAR: S/. ${sale.total}</strong></p>
                 </div>
             </div>

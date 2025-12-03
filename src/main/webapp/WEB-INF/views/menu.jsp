@@ -32,7 +32,7 @@
             </a>
 
             <!-- Métricas -->
-            <a href="/metricas" class="card">
+            <a href="/metricas/" class="card">
                 <img src="imag/Stats.png" alt="Métricas">
                 <p>Métricas</p>
             </a>
