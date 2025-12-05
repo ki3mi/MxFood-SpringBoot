@@ -1,5 +1,6 @@
 package com.example.demo.repository.impl;
 
+import java.sql.Date;
 import java.util.List;
 
 
@@ -35,9 +36,9 @@ public class SaleRepository implements SaleDAO{
         );
     };
     // Listar las Ventas
-    public List<Sale> list(){
-        String query = "SELECT * FROM venta ORDER BY Id DESC";
-        return jdbcTemplate.query(query, saleRowMapper);
+    public List<Sale> list(String cliente){
+        String query = "SELECT * FROM venta WHERE Nombre LIKE ? ORDER BY Id DESC";
+        return jdbcTemplate.query(query, saleRowMapper, "%"+cliente+"%");
     }
 
     // Listar ventas pendientes

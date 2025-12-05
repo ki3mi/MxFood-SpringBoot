@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.sql.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,12 +34,12 @@ public class SaleController {
     public String redirect(){
         return "redirect:/ventas/listar";
     }
-
     
     // Listar Ventas
     @GetMapping("/listar")
-    public String listSales(Model model){
-        model.addAttribute("sales", saleService.list());
+    public String listSales(@RequestParam(required = false) String cliente,
+                            Model model){
+        model.addAttribute("sales", saleService.list(cliente));
         return "venta/gestion-ventas";
     }
     

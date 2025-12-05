@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -26,8 +27,11 @@ public class SaleServiceImpl implements SaleService{
     }
     
     // Listar los productos
-    public List<Sale> list(){
-        return saleDAO.list();
+    public List<Sale> list(String cliente){
+        if (cliente == null){
+            cliente = "";
+        }
+        return saleDAO.list(cliente);
     }
 
     public List<Sale> listPending(){

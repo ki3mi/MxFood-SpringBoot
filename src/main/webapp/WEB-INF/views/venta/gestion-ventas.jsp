@@ -17,35 +17,20 @@
 
         <!-- SECCIÓN DE FILTROS -->
         <div class="filtro-seccion">
-            <h2>Filtrar Pedidos:</h2>
+            <h2>Buscar:</h2>
             <div class="filtros-contenido">
-                <!-- Fecha -->
-                <div class="filtro-item">
-                    <label for="fechaDesde">Fecha desde:</label>
-                    <input type="date" id="fechaDesde" class="input-filtro">
-                </div>
+                <form class="filtros-contenido" action="${pageContext.request.contextPath}/ventas/listar" method="get">
+                    <!-- Cliente -->
+                    <div class="filtro-item">
+                        <label for="cliente">Cliente</label>
+                        <input type="text" name="cliente" id="cliente" class="input-filtro" placeholder="Nombre de Cliente">
+                    </div>
 
-                <!-- Cliente -->
-                <div class="filtro-item">
-                    <label for="cliente">Cliente:</label>
-                    <input type="text" id="cliente" class="input-filtro" placeholder="Nombre de Cliente">
-                </div>
-
-                <!-- Tipo de Pedido -->
-                <div class="filtro-item">
-                    <label for="tipoPedido">Tipo de Pedido:</label>
-                    <select id="tipoPedido" class="input-filtro">
-                        <option value="">Todos</option>
-                        <option value="llevar">Para llevar</option>
-                        <option value="tienda">Para tienda</option>
-                        <option value="domicilio">Domicilio</option>
-                    </select>
-                </div>
-
-                <!-- Botón Buscar -->
-                <div class="filtro-item boton-container">
-                    <button class="boton-buscar">Buscar</button>
-                </div>
+                    <!-- Botón Buscar -->
+                    <div class="filtro-item boton-container">
+                        <button type="submit" class="boton-buscar">Buscar</button>
+                    </div>
+                </form>
             </div>
         </div>
 

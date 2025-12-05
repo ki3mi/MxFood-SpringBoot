@@ -28,8 +28,8 @@ public class UserRepository implements UserDAO{
     };
 
     public User authUser(String user, String password){
-        String sql = "SELECT * FROM usuario WHERE email = ? AND password = ?";
-        List<User> usuarios = jdbcTemplate.query(sql, userRowMapper, user, password);
+        String sql = "SELECT * FROM usuario WHERE email = ? AND password = ? AND Estado = ?";
+        List<User> usuarios = jdbcTemplate.query(sql, userRowMapper, user, password, "Activo");
         return usuarios.isEmpty() ? null : usuarios.get(0);
     }
 
