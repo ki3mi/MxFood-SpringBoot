@@ -5,7 +5,7 @@ public class Metrics {
     private String etiqueta;
     private Integer porcentual;
     private String totalFormat;
-
+ 
     public Metrics(){}
 
     public Metrics(Double subTotal, String etiqueta){

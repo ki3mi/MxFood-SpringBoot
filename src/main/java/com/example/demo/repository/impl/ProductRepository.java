@@ -52,7 +52,7 @@ public class ProductRepository implements ProductDAO{
     public List<Product> listProducts(){
         String query = "SELECT Id, Nombre, Descripcion, Precio, Estado, Categoria_Id FROM producto";
         return jdbcTemplate.query(query, productRowMapper);
-    }
+    } 
 
     // Listar productos con Categoria
     public List<Product> listProductsCat(){

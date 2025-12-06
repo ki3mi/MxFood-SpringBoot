@@ -57,7 +57,7 @@
                     <!-- BOTON DE EDITAR -->
                     <a href="${pageContext.request.contextPath}/productos/edit/${product.id}"><button class="ghost">Editar</button></a>
 
-                    <!-- BOTON DE ELIMINAR -->
+                    <!-- BOTON DE DESACTIVAR -->
                     <form action="${pageContext.request.contextPath}/productos/deactivate/${product.id}" method="post">
                       <button type="submit" ${product.estado == 'Inactivo' ? 'style="visibility: hidden;"' : ''} onclick="return confirm('¿Deseas desactivar este producto?')" class="btn">Desactivar</button>
                     </form>
