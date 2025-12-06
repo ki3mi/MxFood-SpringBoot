@@ -14,25 +14,27 @@
         <section class="contenedor productos">
             <h2>Productos</h2>
             <!-- Barra de busqueda -->
-            <div class="searchBar">
-                <form action="${pageContext.request.contextPath}/ventas/agregardetalle/${sale.id}">
+            <form action="${pageContext.request.contextPath}/ventas/agregardetalle/${sale.id}">
+                <div class="searchBar">
                     <input type="text" class="input-text" placeholder="Buscar nombre..." name="query">
                     <button type="submit" class="btn-search">Buscar</button>
-                </form>
-            </div>
+                </div>
+            </form>
             <ul class="productos-lista" id="productosSeleccionados">
                 <c:if test="${empty products}">
                     <li style="font-weight: bold;">No hay coincidencias</li>
                 </c:if>
                 <c:forEach items="${products}" var="product">
-                    <div>
-                        <li>${product.nombre}: S/. ${product.precio}</li>
+                    <div class="lista-productos">
+                        <li>
+                            ${product.nombre}: S/. ${product.precio}
+                        </li>
                         <form action="${pageContext.request.contextPath}/ventas/agregardetalle" method="post">
                             <input type="hidden" name="idVenta" value="${sale.id}">
                             <input type="hidden" name="idProducto" value="${product.id}">
-                            <input type="number" name="cantidad" value="1">
+                            <input type="number" name="cantidad" value="1" class="input-cant">
                             <input type="hidden" name="subTotal" value="0">
-                            <button type="submit">Agregar</button>
+                            <button type="submit" class="btn-agregar">Agregar</button>
                         </form>
                     </div>
                 </c:forEach>
@@ -40,7 +42,7 @@
             <h3>Productos Seleccionados</h3>
             <ul class="productos-lista" id="productosSeleccionados">
                 <c:forEach items="${details}" var="detail">
-                    <li>${detail.product.nombre}: Sub-Tota: S/. ${detail.subTotal}</li>
+                    <li>${detail.cantidad}: ${detail.product.nombre} S/. ${detail.subTotal}</li>
                 </c:forEach>
             </ul>
         </section>
